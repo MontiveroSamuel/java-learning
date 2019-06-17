@@ -11,7 +11,7 @@ public class SumaDeVariosNumeros {
             if (read == 0){
                 break;
             }
-            if (read != 0) {
+            else {
                 suma = suma + read;
             }
             System.out.println("La suma va: " + suma);
