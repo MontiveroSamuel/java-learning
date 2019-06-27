@@ -1,26 +1,28 @@
 import java.util.Scanner;
 
-public class PrintLeftHalfTriangle {
+public class PrintChristmasTree {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
-        System.out.println("Ingrese altura de triangulo:");
-        int triangulo = Integer.parseInt(reader.nextLine());
-        printLeftHalf(triangulo);
+        System.out.println("Escriba altura del arbol:");
+        int arbolUsuario = Integer.parseInt(reader.nextLine());
+        printXmasTree(arbolUsuario);
     }
 
-    public static void printLeftHalf(int alturaTriangulo){
-        int stars = 1;
-        int espacios = (alturaTriangulo - 1);
-
-        while (stars <= alturaTriangulo){
-
-            printWhithespace(espacios);
-            printStars(stars);
-            stars ++;
-            espacios --;
+    public static void printXmasTree(int alturaArbol){
+        int cantdadBlancos = alturaArbol - 1;
+        int cantidadStars = 1;
+        while (cantdadBlancos >= 0){
+            printWhithespace(cantdadBlancos);
+            printStars(cantidadStars);
+            cantdadBlancos --;
+            cantidadStars += 2;
         }
-
+        printWhithespace(alturaArbol - 2);
+        printStars(3);
+        printWhithespace(alturaArbol - 2);
+        printStars(3);
     }
+
     public static void printWhithespace(int espacios){
         int repeticion = 0;
         String blanco = "";
