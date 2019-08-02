@@ -9,13 +9,12 @@ public class Variance {
             double potenciaResta = Math.pow(resta, 2);
             potencias.add(potenciaResta);
         }
-        double sumatoria = sumaPot(potencias);
+        double sumatoria = sumaGeneric(potencias);
         System.out.println(sumatoria);
         return sumatoria / (lista.size() - 1);
 
 
     }
-    //Duda: hace falta hacer otro metodo para realizar la suma de doubles?
     
     public static double sumaPot(ArrayList<Double> list) {
         double sum = 0;
@@ -26,14 +25,23 @@ public class Variance {
     }
     public static double suma(ArrayList<Integer> list){
         int sum = 0;
-        // duda ->   list.forEach((num) -> sum += num);
         for (int numero:list){
             sum = sum + numero;
         }
         return sum;
     }
+
+    private static <T extends Number> double sumaGeneric(ArrayList<T> numbers){
+        double sum = 0;
+        // duda ->   list.forEach((num) -> sum += num);
+        for (T numero:numbers){
+            sum = sum + numero.doubleValue();
+         }
+        return sum;
+    }
+
     public static double promedio(ArrayList<Integer> list) {
-        return suma(list) / (((double)list.size()) * 1.0);
+        return sumaGeneric(list) / (((double)list.size()) * 1.0);
     }
 
     public static void main(String[] args) {
