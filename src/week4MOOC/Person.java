@@ -12,9 +12,9 @@ public class Person {
     }
 
     public static void main(String[] args) {
-        Person Pancho = new Person("Pancho");
-        Person Damakos = new Person("Damakos");
-        Person Milo = new Person("Milo");
+        Person Pancho = new Person("pancho");
+        Person Damakos = new Person("damakos");
+        Person Milo = new Person("milo");
 
         Pancho.printPerson();
         Damakos.printPerson();
